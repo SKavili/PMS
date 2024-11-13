@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Role Goal Targets</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .form-row label {
+      flex: 0 0 100px;
+    }
+    .form-row input, 
+    .form-row select {
+      flex: 1 0 180px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .form-row button {
+      flex: 0 0 auto;
+      padding: 7px 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Role Goal Targets</h1>
+
+  <!-- Data Capture Form -->
+  <form action="insert_role_goal_target.php" method="POST" class="form-row">
+    <label for="OrganizationID">Organization:</label>
+    <select id="OrganizationID" name="OrganizationID" required>
+      <option value="1">Microsoft</option>
+      <option value="2">Google</option>
+      <option value="3">Amazon</option>
+      <option value="4">Facebook</option>
+      <option value="5">Apple</option>
+      <option value="6">Oracle</option>
+      <option value="7">Salesforce</option>
+      <option value="8">SAP</option>
+      <option value="9">Adobe</option>
+      <option value="10">IBM</option>
+      <option value="11">Intel</option>
+      <option value="12">Cisco</option>
+      <option value="13">Uber</option>
+      <option value="14">Airbnb</option>
+      <option value="15">Spotify</option>
+      <option value="16">Netflix</option>
+      <option value="17">Slack</option>
+      <option value="18">Zoom</option>
+      <option value="19">Shopify</option>
+      <option value="20">PayPal</option>
+    </select>
+
+    <label for="Role">Role:</label>
+    <select id="Role" name="Role" required>
+      <option value="Manager">Manager</option>
+      <option value="Employee">Employee</option>
+      <option value="HR">HR</option>
+      <option value="Admin">Admin</option>
+      <option value="Developer">Developer</option>
+      <option value="Analyst">Analyst</option>
+    </select>
+
+    <label for="GoalType">Goal Type:</label>
+    <select id="GoalType" name="GoalType" required>
+      <option value="Functional">Functional</option>
+      <option value="Self-Development">Self-Development</option>
+      <option value="Team Support">Team Support</option>
+    </select>
+
+    <label for="TargetUnits">Target Units:</label>
+    <input type="number" id="TargetUnits" name="TargetUnits" required>
+
+    <button type="submit">Add Role Goal Target</button>
+  </form>
+
+  <!-- Data Display Table -->
+  <h2>Role Goal Targets</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Organization</th>
+      <th>Role</th>
+      <th>Goal Type</th>
+      <th>Target Units</th>
+    </tr>
+    <tr><td>1</td><td>Microsoft</td><td>Developer</td><td>Functional</td><td>50</td></tr>
+    <tr><td>2</td><td>Microsoft</td><td>Developer</td><td>Self-Development</td><td>20</td></tr>
+    <tr><td>3</td><td>Google</td><td>Manager</td><td>Functional</td><td>30</td></tr>
+    <tr><td>4</td><td>Google</td><td>Manager</td><td>Team Support</td><td>40</td></tr>
+  </table>
+
+  <a href="dashboard.html" class="button">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scoring Parameter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Scoring Parameter</h1>
+
+  <!-- Data Capture Form -->
+  <form action="insert_scoring_parameter.php" method="POST">
+    <label for="ParameterName">Parameter Name:</label>
+    <input type="text" id="ParameterName" name="ParameterName" required>
+    
+    <!-- Industry Type Dropdown -->
+    <label for="IndustryTypeID">Industry Type:</label>
+    <select id="IndustryTypeID" name="IndustryTypeID" required>
+      <option value="1">Software Development</option>
+      <option value="2">Information Technology Services</option>
+      <option value="3">Cloud Computing</option>
+      <option value="4">Cybersecurity</option>
+      <option value="5">Artificial Intelligence</option>
+      <option value="6">Data Analytics</option>
+      <option value="7">Enterprise Software</option>
+      <option value="8">Mobile Application Development</option>
+      <option value="9">Game Development</option>
+      <option value="10">E-commerce Platforms</option>
+      <option value="11">Financial Technology</option>
+      <option value="12">Healthcare IT</option>
+      <option value="13">Educational Technology</option>
+      <option value="14">Customer Relationship Management</option>
+      <option value="15">Supply Chain Management</option>
+      <option value="16">Human Resources Software</option>
+      <option value="17">Project Management Tools</option>
+      <option value="18">Marketing Automation</option>
+      <option value="19">Business Intelligence</option>
+      <option value="20">Networking Solutions</option>
+    </select>
+
+    <button type="submit">Add Scoring Parameter</button>
+  </form>
+
+  <!-- Data Display Table -->
+  <h2>Scoring Parameters</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Industry Type</th>
+      <th>Parameter Name</th>
+    </tr>
+    <tr><td>1</td><td>Software Development</td><td>Code Quality</td></tr>
+    <tr><td>2</td><td>Software Development</td><td>Feature Development</td></tr>
+    <tr><td>3</td><td>Software Development</td><td>Bug Resolution</td></tr>
+    <tr><td>4</td><td>Software Development</td><td>Team Collaboration</td></tr>
+    <tr><td>5</td><td>Software Development</td><td>Client Feedback</td></tr>
+    <tr><td>6</td><td>Software Development</td><td>Innovation</td></tr>
+    <tr><td>7</td><td>Software Development</td><td>Documentation</td></tr>
+    <tr><td>8</td><td>Software Development</td><td>Mentorship</td></tr>
+    <tr><td>9</td><td>Software Development</td><td>Project Management</td></tr>
+    <tr><td>10</td><td>Software Development</td><td>Customer Support</td></tr>
+    <tr><td>11</td><td>Software Development</td><td>System Uptime</td></tr>
+    <tr><td>12</td><td>Software Development</td><td>Security Compliance</td></tr>
+    <tr><td>13</td><td>Software Development</td><td>Performance Optimization</td></tr>
+    <tr><td>14</td><td>Software Development</td><td>Resource Management</td></tr>
+    <tr><td>15</td><td>Software Development</td><td>Stakeholder Communication</td></tr>
+    <tr><td>16</td><td>Software Development</td><td>Training Participation</td></tr>
+    <tr><td>17</td><td>Software Development</td><td>Code Reviews</td></tr>
+    <tr><td>18</td><td>Software Development</td><td>Design Architecture</td></tr>
+    <tr><td>19</td><td>Software Development</td><td>Market Research</td></tr>
+    <tr><td>20</td><td>Software Development</td><td>Compliance Adherence</td></tr>
+  </table>
+
+  <a href="dashboard.html" class="button">Back to Dashboard</a>
+</body>
+</html>

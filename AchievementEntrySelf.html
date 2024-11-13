@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make Entry</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-row label {
+      flex: 0 0 120px;
+      font-weight: bold;
+    }
+    .form-row input[type="text"],
+    .form-row input[type="number"],
+    .form-row select,
+    .form-row textarea {
+      flex: 1;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .form-row textarea {
+      height: 40px;
+    }
+    .form-row button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-row button:hover {
+      background-color: #45a049;
+    }
+
+    /* Form and table styling */
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-row label {
+      flex: 0 0 120px;
+      font-weight: bold;
+    }
+    .form-row input[type="text"],
+    .form-row input[type="number"],
+    .form-row select,
+    .form-row textarea {
+      flex: 1;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .form-row textarea {
+      height: 40px;
+    }
+    .form-row button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-row button:hover {
+      background-color: #45a049;
+    }
+    .deny-button {
+      color: #d9534f;
+      cursor: pointer;
+    }
+    .accept-button {
+      color: #5cb85c;
+      cursor: pointer;
+    }
+
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      width: 300px;
+      margin: 100px auto;
+    }
+    .modal-header {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .modal-button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .cancel-button {
+      background-color: #ddd;
+    }
+    .deny-submit-button {
+      background-color: #d9534f;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Make Entry</h1>
+
+  <!-- Data Capture Form -->
+  <form action="insert_achievement_entry.php" method="POST" enctype="multipart/form-data" class="form-container">
+    <div class="form-row">
+      <label for="ScoringParameter">Scoring Parameter:</label>
+      <select id="ScoringParameter" name="ScoringParameter" required>
+        <option value="1">Code Quality</option>
+        <option value="2">Feature Development</option>
+        <option value="3">Bug Resolution</option>
+        <option value="4">Team Collaboration</option>
+        <option value="5">Client Feedback</option>
+        <option value="6">Innovation</option>
+        <!-- Add more scoring parameter options as needed -->
+      </select>
+    </div>
+  <div class="form-row">
+      <label for="Type">Type:</label>
+      <select id="Type" name="Type" required>
+        <option value="2">Achievement</option>
+        <option value="3">Recognition</option>
+  
+      </select>
+    </div>
+    <div class="form-row">
+      <label for="Description">Description:</label>
+      <textarea id="Description" name="Description" required></textarea>
+    </div>
+
+    <div class="form-row">
+      <label for="ProofAttachment">Proof Attachment:</label>
+      <input type="file" id="ProofAttachment" name="ProofAttachment" accept=".pdf, .doc, .docx, .jpg, .png">
+    </div>
+
+    <div class="form-row">
+      <button type="submit">Add Entry</button>
+    </div>
+  </form>
+
+  <!-- Data Display Table -->
+  <h2>Achievements / Recognitions </h2>
+  <!-- Data Display Table with Accept/Deny Actions -->
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Scoring Parameter</th>
+      <th>Description</th>
+      <th>Entry Date</th>
+      <th>Score</th>
+      <th>Proof</th>
+      <th>Action</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Feature Development</td>
+      <td>Developed a new feature ahead of schedule.</td>
+      <td>10-Aug-2024</td>
+      <td>9.5</td>
+      <td><a href="proof1.pdf">View</a></td>
+      <td>
+        <span class="accept-button" onclick="acceptEntry(1)">Accept</span> / 
+        <span class="deny-button" onclick="showDenyModal(1)">Deny</span>
+      </td>
+      <td>Pending</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Bug Resolution</td>
+      <td>Resolved critical bugs affecting the system.</td>
+      <td>17-Sep-2024</td>
+      <td>9.0</td>
+      <td><a href="proof2.jpg">View</a></td>
+      <td>
+        <span class="accept-button" onclick="acceptEntry(2)">Accept</span> / 
+        <span class="deny-button" onclick="showDenyModal(2)">Deny</span>
+      </td>
+      <td>Pending</td>
+    </tr>
+  </table>
+
+  <!-- Modal for Denying an Entry -->
+  <div id="denyModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">Deny Entry</div>
+      <p>Provide a reason for denying this entry:</p>
+      <textarea id="denyComment" rows="4" placeholder="Enter reason for denial"></textarea>
+      <div class="modal-footer">
+        <button class="modal-button cancel-button" onclick="closeDenyModal()">Cancel</button>
+        <button class="modal-button deny-submit-button" onclick="submitDeny()">Submit Denial</button>
+      </div>
+    </div>
+  </div>
+
+  <a href="dashboard.html" class="button">Back to Dashboard</a>
+
+  <script>
+    let currentEntryId;
+
+    // Show the deny modal and save the current entry ID
+    function showDenyModal(entryId) {
+      currentEntryId = entryId;
+      document.getElementById('denyModal').style.display = 'block';
+    }
+
+    // Close the deny modal
+    function closeDenyModal() {
+      document.getElementById('denyModal').style.display = 'none';
+      document.getElementById('denyComment').value = ''; // Clear the comment field
+    }
+
+    // Accept entry function
+    function acceptEntry(entryId) {
+      alert(`Entry ${entryId} accepted.`);
+      // Here you can add AJAX or form submission code to mark the entry as accepted
+    }
+
+    // Submit denial with comment
+    function submitDeny() {
+      const denyComment = document.getElementById('denyComment').value;
+      if (!denyComment) {
+        alert("Please provide a reason for denial.");
+        return;
+      }
+      alert(`Entry ${currentEntryId} denied with comment: ${denyComment}`);
+      closeDenyModal();
+      // Here you can add AJAX or form submission code to save the denial reason
+    }
+  </script>
+</body>
+</html>

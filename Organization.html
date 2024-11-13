@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Organization</h1>
+
+  <!-- Data Capture Form -->
+  <form action="insert_organization.php" method="POST">
+    <label for="OrgName">Organization Name:</label>
+    <input type="text" id="OrgName" name="OrgName" required>
+    
+    <!-- Dropdown for Industry Type -->
+    <label for="IndustryTypeID">Industry Type:</label>
+    <select id="IndustryTypeID" name="IndustryTypeID" required>
+      <option value="1">Software Development</option>
+      <option value="2">Information Technology Services</option>
+      <option value="3">Cloud Computing</option>
+      <option value="4">Cybersecurity</option>
+      <option value="5">Artificial Intelligence</option>
+      <option value="6">Data Analytics</option>
+      <option value="7">Enterprise Software</option>
+      <option value="8">Mobile Application Development</option>
+      <option value="9">Game Development</option>
+      <option value="10">E-commerce Platforms</option>
+      <option value="11">Financial Technology</option>
+      <option value="12">Healthcare IT</option>
+      <option value="13">Educational Technology</option>
+      <option value="14">Customer Relationship Management</option>
+      <option value="15">Supply Chain Management</option>
+      <option value="16">Human Resources Software</option>
+      <option value="17">Project Management Tools</option>
+      <option value="18">Marketing Automation</option>
+      <option value="19">Business Intelligence</option>
+      <option value="20">Networking Solutions</option>
+    </select>
+    
+    <button type="submit">Add Organization</button>
+  </form>
+
+  <!-- Data Display Table -->
+  <h2>Organization Records</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Organization Name</th>
+      <th>Industry Type</th>
+      <th>Target Score</th>
+    </tr>
+    <tr><td>1</td><td>Microsoft</td><td>Software Development</td><td>50</td></tr>
+    <tr><td>2</td><td>Google</td><td>Software Development</td><td>50</td></tr>
+    <tr><td>3</td><td>Amazon</td><td>Cloud Computing</td><td>50</td></tr>
+    <tr><td>4</td><td>Facebook</td><td>Software Development</td><td>50</td></tr>
+    <tr><td>5</td><td>Apple</td><td>Software Development</td><td>50</td></tr>
+    <tr><td>6</td><td>Oracle</td><td>Enterprise Software</td><td>50</td></tr>
+    <tr><td>7</td><td>Salesforce</td><td>Customer Relationship Management</td><td>50</td></tr>
+    <tr><td>8</td><td>SAP</td><td>Enterprise Software</td><td>50</td></tr>
+    <tr><td>9</td><td>Adobe</td><td>Software Development</td><td>50</td></tr>
+    <tr><td>10</td><td>IBM</td><td>Information Technology Services</td><td>50</td></tr>
+    <tr><td>11</td><td>Intel</td><td>Software Development</td><td>50</td></tr>
+    <tr><td>12</td><td>Cisco</td><td>Networking Solutions</td><td>50</td></tr>
+    <tr><td>13</td><td>Uber</td><td>Mobile Application Development</td><td>50</td></tr>
+    <tr><td>14</td><td>Airbnb</td><td>Mobile Application Development</td><td>50</td></tr>
+    <tr><td>15</td><td>Spotify</td><td>Mobile Application Development</td><td>50</td></tr>
+    <tr><td>16</td><td>Netflix</td><td>Mobile Application Development</td><td>50</td></tr>
+    <tr><td>17</td><td>Slack</td><td>Human Resources Software</td><td>50</td></tr>
+    <tr><td>18</td><td>Zoom</td><td>Human Resources Software</td><td>50</td></tr>
+    <tr><td>19</td><td>Shopify</td><td>E-commerce Platforms</td><td>50</td></tr>
+    <tr><td>20</td><td>PayPal</td><td>Financial Technology</td><td>50</td></tr>
+  </table>
+
+  <a href="dashboard.html" class="button">Back to Dashboard</a>
+</body>
+</html>

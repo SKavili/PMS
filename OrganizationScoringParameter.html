@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organization Scoring Parameters</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-row label {
+      flex: 0 0 140px;
+      font-weight: bold;
+    }
+    .form-row select, .form-row input {
+      flex: 1;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .form-row button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-row button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Organization Scoring Parameters</h1>
+
+  <!-- Data Capture Form -->
+  <form action="insert_org_scoring_parameter.php" method="POST" class="form-container">
+    <!-- Organization and Industry Selection -->
+    <div class="form-row">
+      <label for="IndustryTypeID">Industry Type:</label>
+      <select id="IndustryTypeID" name="IndustryTypeID" required>
+        <option value="1">Software Development</option>
+        <option value="2">Information Technology Services</option>
+        <option value="3">Cloud Computing</option>
+        <!-- Add more industry types as needed -->
+      </select>
+    </div>
+	<div class="form-row">
+      <label for="OrganizationID">Organization:</label>
+      <select id="OrganizationID" name="OrganizationID" required>
+        <option value="1">Microsoft</option>
+        <option value="2">Google</option>
+        <option value="3">Amazon</option>
+        <!-- Add more organizations as needed -->
+      </select>
+    </div>
+
+    
+
+    <!-- Master Scoring Parameters Selection -->
+    <div class="form-row">
+      <label for="MasterParameter">Master Scoring Parameter:</label>
+      <select id="MasterParameter" name="MasterParameter">
+        <option value="1">Code Quality</option>
+        <option value="2">Feature Development</option>
+        <option value="3">Bug Resolution</option>
+        <option value="4">Team Collaboration</option>
+        <option value="5">Client Feedback</option>
+        <option value="6">Innovation</option>
+        <!-- Add more master parameters as needed -->
+      </select>
+    </div>
+
+    <!-- Custom Scoring Parameter Input -->
+    <div class="form-row">
+      <label for="CustomParameter">Custom Parameter:</label>
+      <input type="text" id="CustomParameter" name="CustomParameter" placeholder="Enter custom parameter">
+    </div>
+
+    <div class="form-row">
+      <button type="submit">Add Scoring Parameter</button>
+    </div>
+  </form>
+
+  <!-- Data Display Table -->
+  <h2>My Organization's Scoring Parameters</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Industry Type</th>
+      <th>Organization Name</th>
+      <th>Parameter Name</th>
+    </tr>
+    <tr><td>1</td><td>Software Development</td><td>Microsoft</td><td>Code Quality</td></tr>
+    <tr><td>2</td><td>Information Technology</td><td>Google</td><td>Feature Development</td></tr>
+    <tr><td>3</td><td>Cloud Computing</td><td>Amazon</td><td>Bug Resolution</td></tr>
+    <!-- Add more rows as needed -->
+  </table>
+
+  <a href="dashboard.html" class="button">Back to Dashboard</a>
+</body>
+</html>

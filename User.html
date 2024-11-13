@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .form-row label {
+      flex: 0 0 100px;
+    }
+    .form-row input, 
+    .form-row select {
+      flex: 1 0 180px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .form-row button {
+      flex: 0 0 auto;
+      padding: 7px 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee</h1>
+
+  <!-- Data Capture Form in a Single Row -->
+  <form action="insert_user.php" method="POST" class="form-row">
+    <label for="FullName">Full Name:</label>
+    <input type="text" id="FullName" name="FullName" required>
+
+    <label for="Email">Email:</label>
+    <input type="email" id="Email" name="Email" required>
+
+    <label for="Role">Role:</label>
+    <select name="Role" id="Role">
+      <option value="Manager">Manager</option>
+      <option value="Employee">Employee</option>
+      <option value="HR">HR</option>
+      <option value="Admin">Admin</option>
+      <option value="Developer">Developer</option>
+      <option value="Analyst">Analyst</option>
+    </select>
+
+    <label for="OrganizationID">Organization:</label>
+    <select id="OrganizationID" name="OrganizationID" required>
+      <option value="1">Microsoft</option>
+      <option value="2">Google</option>
+      <option value="3">Amazon</option>
+      <option value="4">Facebook</option>
+      <option value="5">Apple</option>
+      <option value="6">Oracle</option>
+      <option value="7">Salesforce</option>
+      <option value="8">SAP</option>
+      <option value="9">Adobe</option>
+      <option value="10">IBM</option>
+      <option value="11">Intel</option>
+      <option value="12">Cisco</option>
+      <option value="13">Uber</option>
+      <option value="14">Airbnb</option>
+      <option value="15">Spotify</option>
+      <option value="16">Netflix</option>
+      <option value="17">Slack</option>
+      <option value="18">Zoom</option>
+      <option value="19">Shopify</option>
+      <option value="20">PayPal</option>
+    </select>
+
+    <button type="submit">Add Employee</button>
+  </form>
+
+  <!-- Data Display Table -->
+  <h2>Employees</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Organization</th>
+    </tr>
+    <tr><td>1</td><td>Alice Johnson</td><td>alice.johnson@microsoft.com</td><td>Manager</td><td>Microsoft</td></tr>
+    <tr><td>2</td><td>Bob Smith</td><td>bob.smith@microsoft.com</td><td>Developer</td><td>Microsoft</td></tr>
+    <tr><td>3</td><td>Carol White</td><td>carol.white@microsoft.com</td><td>Analyst</td><td>Microsoft</td></tr>
+    <tr><td>4</td><td>David Brown</td><td>david.brown@google.com</td><td>Manager</td><td>Google</td></tr>
+    <tr><td>5</td><td>Eve Davis</td><td>eve.davis@google.com</td><td>Developer</td><td>Google</td></tr>
+    <tr><td>6</td><td>Frank Wilson</td><td>frank.wilson@google.com</td><td>Analyst</td><td>Google</td></tr>
+  </table>
+
+  <a href="dashboard.html" class="button">Back to Dashboard</a>
+</body>
+</html>

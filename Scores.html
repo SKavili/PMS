@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee and Project Scores Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    .dashboard-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .dashboard-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .dashboard-card h2 {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .score-table, .summary {
+      width: 100%;
+      text-align: left;
+      margin-top: 10px;
+    }
+    .score-table th, .score-table td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .score-table th {
+      font-weight: bold;
+      background-color: #444444;
+    }
+    .summary {
+      font-size: 16px;
+      color: #666;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Performance Dashboard</h1>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard-container">
+    <!-- Employee Scores Card -->
+    <div class="dashboard-card">
+      <h2>Individual Employee Scores</h2>
+      <table class="score-table">
+        <tr>
+          <th>Employee</th>
+          <th>Total Score</th>
+        </tr>
+        <tr><td>Alice Johnson</td><td>95</td></tr>
+        <tr><td>Bob Smith</td><td>89</td></tr>
+        <tr><td>Carol White</td><td>92</td></tr>
+        <tr><td>David Brown</td><td>87</td></tr>
+        <!-- Add more rows as needed -->
+      </table>
+      <div class="summary">
+        <strong>Average Employee Score:</strong> 90.75
+      </div>
+    </div>
+
+    <!-- Project Scores Card -->
+    <div class="dashboard-card">
+      <h2>Project Scores</h2>
+      <table class="score-table">
+        <tr>
+          <th>Project</th>
+          <th>Total Score</th>
+        </tr>
+        <tr><td>Project Alpha</td><td>92</td></tr>
+        <tr><td>Project Beta</td><td>85</td></tr>
+        <tr><td>Project Gamma</td><td>88</td></tr>
+        <tr><td>Project Delta</td><td>90</td></tr>
+        <!-- Add more rows as needed -->
+      </table>
+      <div class="summary">
+        <strong>Average Project Score:</strong> 88.75
+      </div>
+    </div>
+
+    <!-- Comparison Card - Employee vs. Project Scores -->
+    <div class="dashboard-card">
+      <h2>Employee vs. Project Score Comparison</h2>
+      <table class="score-table">
+        <tr>
+          <th>Category</th>
+          <th>Average Score</th>
+        </tr>
+        <tr><td>Average Employee Score</td><td>90.75</td></tr>
+        <tr><td>Average Project Score</td><td>88.75</td></tr>
+      </table>
+      <div class="summary">
+        Employees on average scored slightly higher than the project scores, indicating a balanced performance across projects.
+      </div>
+    </div>
+
+    <!-- Key Insights Card -->
+    <div class="dashboard-card">
+      <h2>Key Insights</h2>
+      <div class="summary">
+        <ul style="list-style: none; padding: 0;">
+          <li>• High-performing employees are consistently contributing to higher project scores.</li>
+          <li>• Average scores align well with organizational benchmarks, indicating stability in performance.</li>
+          <li>• Individual coaching may be recommended for employees scoring below 85 to enhance project impact.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <a href="dashboard.html" class="button">Back to Dashboard</a>
+</body>
+</html>

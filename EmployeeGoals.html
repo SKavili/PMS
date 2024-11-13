@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Goals</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .form-row label {
+      flex: 0 0 100px;
+    }
+    .form-row input, 
+    .form-row select {
+      flex: 1 0 180px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .form-row button {
+      flex: 0 0 auto;
+      padding: 7px 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee Goals</h1>
+
+  <!-- Data Capture Form -->
+  <form action="insert_employee_goal.php" method="POST" class="form-row">
+    <label for="EmployeeID">Employee ID:</label>
+    <input type="number" id="EmployeeID" name="EmployeeID" required>
+
+    <label for="GoalType">Goal Type:</label>
+    <input type="text" id="GoalType" name="GoalType" required>
+
+    <label for="GoalTitle">Goal Title:</label>
+    <input type="text" id="GoalTitle" name="GoalTitle" required>
+
+    <label for="StartDate">Start Date:</label>
+    <input type="date" id="StartDate" name="StartDate">
+
+    <label for="EndDate">End Date:</label>
+    <input type="date" id="EndDate" name="EndDate">
+
+    <button type="submit">Add Employee Goal</button>
+  </form>
+
+  <!-- Data Display Table -->
+  <h2>Employee Goals</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Employee ID</th>
+      <th>Goal Type</th>
+      <th>Goal Title</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Status</th>
+    </tr>
+    <tr><td>1</td><td>2</td><td>Functional</td><td>Complete Feature Development</td><td>2024-10-01</td><td>2024-12-31</td><td>In Progress</td></tr>
+    <tr><td>2</td><td>3</td><td>Self-Development</td><td>Advanced Coding Training</td><td>2024-10-05</td><td>2025-01-15</td><td>In Progress</td></tr>
+  </table>
+
+  <a href="dashboard.html" class="button">Back to Dashboard</a>
+</body>
+</html>

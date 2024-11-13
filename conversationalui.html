@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UI</title>
+    <style>
+        /* Basic styling for the chat UI */
+        #chatContainer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+        #chatHeader {
+            background-color: #0078d7;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #chatBody {
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+        }
+        .message {
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+        .userMessage {
+            background-color: #0078d7;
+            color: white;
+            align-self: flex-end;
+        }
+        .botMessage {
+            background-color: #f1f1f1;
+            color: #333;
+            align-self: flex-start;
+        }
+        #chatInput {
+            display: flex;
+            padding: 10px;
+        }
+        #inputField {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #sendButton {
+            margin-left: 5px;
+            padding: 5px 10px;
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatContainer">
+        <div id="chatHeader">Chat with Us</div>
+        <div id="chatBody"></div>
+        <div id="chatInput">
+            <input type="text" id="inputField" placeholder="Type a message..." />
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBody = document.getElementById('chatBody');
+        const inputField = document.getElementById('inputField');
+        const sendButton = document.getElementById('sendButton');
+
+        function addMessage(content, className) {
+            const message = document.createElement('div');
+            message.className = `message ${className}`;
+            message.innerText = content;
+            chatBody.appendChild(message);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function botResponse(userText) {
+            let botText = "I'm here to help!";
+            if (userText.toLowerCase().includes("azure")) {
+                botText = "Azure credits can cover core Azure services. Let me know if you need more details.";
+            }
+            addMessage(botText, "botMessage");
+        }
+
+        sendButton.addEventListener('click', () => {
+            const userText = inputField.value;
+            if (userText.trim()) {
+                addMessage(userText, "userMessage");
+                inputField.value = "";
+                setTimeout(() => botResponse(userText), 500);
+            }
+        });
+    </script>
+</body>
+</html>
